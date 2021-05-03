@@ -1,0 +1,32 @@
+{
+  "name": "transferable-function",
+  "version": "1.0.0",
+  "description": "Serialize and deserialize function or lambda to json available plane object.",
+  "keywords": [
+    "function",
+    "serialization",
+    "json",
+    "transfer"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf ./lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LonelyGriffin/transferable-function.git"
+  },
+  "author": "lonelygriffin@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LonelyGriffin/transferable-function/issues"
+  },
+  "homepage": "https://github.com/LonelyGriffin/transferable-function#readme",
+  "devDependencies": {
+    "@types/jest": "26.0.23",
+    "jest": "26.6.3",
+    "ts-jest": "26.5.5",
+    "typescript": "4.2.4"
+  }
+}

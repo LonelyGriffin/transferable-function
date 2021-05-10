@@ -150,5 +150,19 @@ describe("transferable-function", () => {
         expect(deserializedFn(-1, 2)).toEqual(2);
       });
     });
+    it("Should work correctly when function have subfunction declaration", () => {
+      const fn = (a: number, b: number) => {
+        function perform(a: number, b: number) {
+          return a + b;
+        }
+
+        return perform(a, b);
+      };
+
+      const transferableFn = serializeFn(fn);
+      const deserializedFn = deserializeFn(transferableFn);
+
+      expect(deserializedFn(1, 2)).toEqual(3);
+    });
   });
 });

@@ -1,4 +1,4 @@
-import { extractBodyRegexp, extractParamsRegexp } from "./regexp";
+import {extractBody, extractParams, toTransferableFunction} from "./utils";
 
 export type TransferableFunction = {
   body: string;
@@ -6,15 +6,10 @@ export type TransferableFunction = {
 };
 
 export const serializeFn = (fn: Function): TransferableFunction => {
-  const fnStr = fn.toString();
-  return {
-    body: fnStr.match(extractBodyRegexp)![1].trim(),
-    argNames: fnStr
-      .match(extractParamsRegexp)![1]
-      .split(",")
-      .map((name) => name.trim())
-      .filter((name) => name !== ""),
-  };
+  const str = fn.toString();
+  const paramsStr = extractParams(str);
+  const bodyStr = extractBody(str);
+  return toTransferableFunction(paramsStr, bodyStr);
 };
 
 export const deserializeFn = (

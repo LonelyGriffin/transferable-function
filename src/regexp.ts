@@ -1,2 +1,2 @@
-export const extractBodyRegexp = /^function[^{]+\{([\s\S]*)\}$/;
-export const extractParamsRegexp = /^function[^\(]*\(([^\)]*)/;
+export const extractBodyRegexp = /[^{]+\{([\s\S]*)\}/;
+export const extractParamsRegexp = /[^\(]*\(([^\)]*)/;

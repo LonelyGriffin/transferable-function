@@ -1,6 +1,6 @@
 {
   "name": "transferable-function",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Serialize and deserialize function or lambda to json available plane object.",
   "keywords": [
     "function",
